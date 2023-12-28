@@ -1,0 +1,416 @@
+/* Importing fonts from google-fonts */
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed&family=Bellefair&display=swap");
+
+/* Removes extra spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Removes sidebar */
+body {
+  overflow: hidden;
+}
+/* Home styling starts here */
+.homeBackground {
+  height: 100%;
+  width: 100%;
+  background: url("../assets/destination/background-destination-desktop.jpg")
+    center center/cover;
+  position: fixed;
+  z-index: -1;
+}
+
+/* Navbar styling starts here */
+.nav-bar {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  padding-left: 64px;
+  padding-top: 68px;
+}
+hr {
+  border: 1px solid #979797;
+  height: 1px;
+  width: 38vw;
+  opacity: 0.5;
+  margin-left: 50px;
+  margin-top: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navitems {
+  position: absolute;
+  top: 0;
+  left: 45vw;
+  background-color: #ffffff22;
+  padding: 40px;
+  backdrop-filter: blur(10px);
+  margin-top: 35px;
+  width: 100%;
+  height: 110.4px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.navitems ul:nth-child(1) {
+  margin-left: 70px;
+}
+.navitems a {
+  border: none;
+  outline: none;
+  text-decoration: none;
+  color: white;
+}
+.navitems ul {
+  height: 70px;
+  cursor: pointer;
+  display: flex;
+  text-align: center;
+  gap: 3rem;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 24px;
+  color: white;
+  list-style: none;
+}
+.indicator {
+  height: 70.5px;
+  border-bottom: 5px solid white;
+}
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 68px;
+  cursor: pointer;
+  z-index: 2;
+}
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+  background-color: #d0d6f9;
+}
+/* Navbar styling ends here */
+/* Info styling starts here */
+.info .objective {
+  position: absolute;
+  top: 25vh;
+  left: 165px;
+  color: white;
+  font-size: 40px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+}
+.number {
+  opacity: 0.3;
+}
+.destinationPicture {
+  position: absolute;
+  top: 37.5vh;
+  left: 190px;
+}
+.destination-options ul {
+  cursor: pointer;
+  font-family: "Barlow Condensed", sans-serif;
+  gap: 1rem;
+  list-style: none;
+  font-size: 25px;
+  display: flex;
+  color: #84888e;
+  position: absolute;
+  top: 30vh;
+  left: 60vw;
+}
+.destinationIndicator {
+  border-bottom: 2px solid white;
+}
+.destinationName {
+  position: absolute;
+  top: 37.5vh;
+  left: 60vw;
+  color: white;
+  font-size: 90px;
+  font-family: "Bellefair", serif;
+}
+.destinationDescription {
+  position: absolute;
+  top: 410.2px;
+  left: 60vw;
+  font-family: "Barlow Condensed", sans-serif;
+  color: white;
+  font-size: 20px;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+.destinationDst {
+  position: absolute;
+  top: 536px;
+  left: 60vw;
+  font-family: "Bellefair", serif;
+  color: #84888e;
+  font-size: 40px;
+}
+.dstAmt {
+  color: white;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 30px;
+}
+.destinationDuration {
+  position: absolute;
+  top: 536px;
+  left: 80vw;
+  font-family: "Bellefair", serif;
+  color: #84888e;
+  font-size: 40px;
+}
+.time {
+  color: white;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 30px;
+}
+/* Info styling ends here */
+@media screen and (max-width: 768px) {
+  body {
+    overflow-y: auto;
+  }
+  .homeBackground {
+    background: url("../assets/destination/background-destination-mobile.jpg")
+      center center/cover;
+  }
+  hr {
+    opacity: 0;
+  }
+  .navitems {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff22;
+    backdrop-filter: blur(10px);
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease-in-out;
+    margin-top: 0;
+    z-index: 3;
+  }
+  .navitems ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 30px;
+    list-style: none;
+  }
+  .navitems ul:nth-child(1) {
+    margin-left: 0px;
+  }
+  .navitems.active {
+    transform: translateX(0);
+  }
+  .hamburger {
+    display: block;
+    top: 80px;
+    right: 68px;
+    position: absolute;
+    z-index: 4;
+  }
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  .info {
+    text-align: center;
+    color: white;
+    left: 0; 
+    width: 100%;
+  }
+   .info .objective {
+    position: absolute;
+    top: 190px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    text-wrap: nowrap;
+  }
+  .destinationItems ul{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 650px;
+  }
+  .destinationPicture {
+    position: absolute;
+    height: 300px;
+    left: 50%;
+    top: 420px;
+    transform: translate(-50%, -50%);
+  }
+  .destinationName{
+    position: absolute;
+    left: 50%;
+    top: 780px;
+    transform: translate(-50%, -50%);
+  }
+  .destinationDescription{
+    position: absolute;
+    left: 50%;
+    top: 940px;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    white-space: normal;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .destinationDescription br{
+    display: none;
+  }
+  .destinationDst{
+    position: absolute;
+    left: 50%;
+    top: 1100px;
+    transform: translate(-50%, -50%);
+    text-wrap: nowrap;
+  }
+  .destinationDuration{
+    position: absolute;
+    left: 50%;
+    top: 1240px;
+    transform: translate(-50%, -50%);
+    text-wrap: nowrap;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    width: 100%;
+    overflow-y: auto;
+  }
+  .homeBackground {
+    background: url('../assets/destination/background-destination-tablet.jpg') center center/cover;
+  }
+  .hamburger {
+    display: none;
+  }
+  .navNumber {
+    display: none;
+  }
+  .navitems {
+    position: absolute;
+    margin: 0;
+    padding-top: 0;
+    width: fit-content;
+    max-width: 100%;
+    height: 80px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    left: 68%;
+    transform: translateX(-50%);
+  }
+  .navitems ul:nth-child(1) {
+    margin-left: 0px;
+  }
+  .navitems ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 25px;
+    height: 0;
+  }
+  .indicator {
+    height: 40px;
+  }
+  hr {
+    display: none;
+  }
+  .info {
+    text-align: center;
+    color: white;
+    left: 0; 
+    width: 100%;
+  }
+   .info .objective {
+    position: absolute;
+    top: 240px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px;
+    text-wrap: nowrap;
+  }
+  .destinationItems ul{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    top: 850px;
+  }
+  .destinationPicture {
+    position: absolute;
+    height: 300px;
+    left: 50%;
+    top: 550px;
+    transform: translate(-50%, -50%);
+  }
+  .destinationName{
+    position: absolute;
+    left: 50%;
+    top: 1040px;
+    transform: translate(-50%, -50%);
+  }
+  .destinationDescription{
+    position: absolute;
+    left: 50%;
+    top: 1240px;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    white-space: normal;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .destinationDescription br{
+    display: none;
+  }
+  .destinationDst{
+    position: absolute;
+    left: 50%;
+    top: 1450px;
+    transform: translate(-50%, -50%);
+    text-wrap: nowrap;
+  }
+  .destinationDuration{
+    position: absolute;
+    left: 50%;
+    top: 1600px;
+    transform: translate(-50%, -50%);
+    text-wrap: nowrap;
+  }
+}
+@media screen and (max-width:820px) {
+  .indicator{
+    height: 60px;
+  }
+}
+ 
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+}
